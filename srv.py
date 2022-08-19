@@ -57,7 +57,7 @@ def ocr_space_url(url, overlay=False, api_key='helloworld', language='eng'):
 # test_url = ocr_space_url(url='http://i.imgur.com/31d5L5y.jpg')
 
 if __name__ == '__main__':
-    test_file = ocr_space_file(filename='example_image.png', language='pol')
+    # test_file = ocr_space_file(filename='example_image.png', language='pol')
     test_url = ocr_space_url(url='http://i.imgur.com/31d5L5y.jpg')
-    print(test_file)
+    # print(test_file)
     print(test_url)
