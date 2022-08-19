@@ -1,9 +1,9 @@
+from parking_decision.business_processes.parking_decider_bp import ParkingDeciderBP
+
 import uvicorn
 from fastapi import FastAPI
 from fastapi_utils.cbv import cbv
 from fastapi_utils.inferring_router import InferringRouter
-
-from parking_decision.business_processes.parking_decider_bp import ParkingDeciderBP
 
 router = InferringRouter()
 
