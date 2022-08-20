@@ -1,25 +1,13 @@
-from typing import Union, Type
-
-from sqlalchemy.orm import Session
+from typing import Union
 
 from parking_decision.business_processes.parking_decider_bp import ParkingDeciderBP
 
 import uvicorn
-from fastapi import FastAPI, File, Depends
+from fastapi import FastAPI, File
 from fastapi_utils.cbv import cbv
 from fastapi_utils.inferring_router import InferringRouter
 
-from parking_decision.db.database import SessionLocal, Base, engine
-
-
-# # Dependency
-# def get_db():
-#     db = SessionLocal
-#     try:
-#         yield db
-#     finally:
-#         db.close()
-
+from parking_decision.db.database import Base, engine
 
 router = InferringRouter()
 
