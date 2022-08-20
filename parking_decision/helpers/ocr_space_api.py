@@ -16,5 +16,4 @@ class OCRSpaceAPi:
                           data=payload,
                           )
         answer = json.loads(r.content.decode())
-        print(answer)
         return json.loads(r.content.decode())["ParsedResults"][0]["ParsedText"]
