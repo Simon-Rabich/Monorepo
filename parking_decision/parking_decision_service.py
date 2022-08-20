@@ -1,4 +1,4 @@
-from typing import Union
+from typing import Union, Type
 
 from sqlalchemy.orm import Session
 
@@ -14,7 +14,7 @@ from parking_decision.db.database import SessionLocal, Base, engine
 
 # Dependency
 def get_db():
-    db = SessionLocal()
+    db = SessionLocal
     try:
         yield db
     finally:
@@ -29,8 +29,9 @@ class ParkingDecisionService:
 
     @router.post("/get_parking_decision")
     def get_parking_decision(self, file_name: str, file: Union[bytes, None] = File(default=None),
-                             db: Session = Depends(get_db)):
-        result = ParkingDeciderBP.construct().execute(file_name=file_name, file=file)
+                             db: Type[Session] = Depends(get_db)):
+        with db() as db_session:
+            result = ParkingDeciderBP.construct().execute(file_name=file_name, file=file)
         return result
 
 

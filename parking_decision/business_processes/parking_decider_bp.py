@@ -8,7 +8,7 @@ class ParkingDeciderBP:
     def __init__(self, ocr_space_api: OCRSpaceAPi):
         self._ocr_space_api = ocr_space_api
 
-    def execute(self, file_name: str, file: BinaryIO) -> str:
+    def execute(self, file_name: str, file: bytes) -> str:
         text_from_file: str = self._ocr_space_api.get_text_from_file(file_name=file_name, file=file)
 
         # Rules
