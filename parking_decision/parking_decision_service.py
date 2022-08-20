@@ -12,13 +12,13 @@ from fastapi_utils.inferring_router import InferringRouter
 from parking_decision.db.database import SessionLocal, Base, engine
 
 
-# Dependency
-def get_db():
-    db = SessionLocal
-    try:
-        yield db
-    finally:
-        db.close()
+# # Dependency
+# def get_db():
+#     db = SessionLocal
+#     try:
+#         yield db
+#     finally:
+#         db.close()
 
 
 router = InferringRouter()
@@ -28,10 +28,8 @@ router = InferringRouter()
 class ParkingDecisionService:
 
     @router.post("/get_parking_decision")
-    def get_parking_decision(self, file_name: str, file: Union[bytes, None] = File(default=None),
-                             db: Type[Session] = Depends(get_db)):
-        with db() as db_session:
-            result = ParkingDeciderBP.construct().execute(file_name=file_name, file=file)
+    def get_parking_decision(self, file_name: str, file: Union[bytes, None] = File(default=None)):
+        result = ParkingDeciderBP.construct().execute(file_name=file_name, file=file)
         return result
 
 
