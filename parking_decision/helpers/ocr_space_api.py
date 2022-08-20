@@ -15,5 +15,4 @@ class OCRSpaceAPi:
                           files={f"{file_name}": file},
                           data=payload,
                           )
-        answer = json.loads(r.content.decode())
         return json.loads(r.content.decode())["ParsedResults"][0]["ParsedText"]
