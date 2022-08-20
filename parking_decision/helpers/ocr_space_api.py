@@ -18,8 +18,3 @@ class OCRSpaceAPi:
         answer = json.loads(r.content.decode())
         print(answer)
         return json.loads(r.content.decode())["ParsedResults"][0]["ParsedText"]
-
-if __name__ == '__main__':
-    file = open("31d5L5y.jpeg", "rb")
-    print(OCRSpaceAPi().get_text_from_file(file=file))
-
