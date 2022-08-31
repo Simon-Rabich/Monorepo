@@ -3,9 +3,7 @@ import json
 import requests
 
 
-class OCRSpaceAPi:
-
-    def get_text_from_file(self, file_name: str, file: bytes) -> str:
+def get_text_from_file(file_name: str, file: bytes) -> str:
         payload = {'isOverlayRequired': False,
                    'apikey': "K82904764288957",
                    'language': "eng",
@@ -14,4 +12,5 @@ class OCRSpaceAPi:
                           files={f"{file_name}": file},
                           data=payload,
                           )
+
         return json.loads(r.content.decode())["ParsedResults"][0]["ParsedText"]
