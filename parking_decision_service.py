@@ -1,5 +1,4 @@
 from typing import Union
-from parking_decision.db.set_db_schema import set_db_schema
 
 from parking_decision.business_processes.parking_decider_bp import ParkingDeciderBP
 
@@ -25,7 +24,6 @@ class ParkingDecisionService:
 
 
 if __name__ == '__main__':
-    set_db_schema()
     app = FastAPI()
     app.include_router(router)
     uvicorn.run(app, host='0.0.0.0', port=8000, log_level="info")

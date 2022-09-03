@@ -12,5 +12,5 @@ def get_engine():
     global engine
     if engine is None:
         url = get_config()['DB_URL']
-        engine = create_engine(url=url, echo=True)
+        engine = create_engine(url=url, echo=True,  pool_pre_ping=True)
     return engine

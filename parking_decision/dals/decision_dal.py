@@ -11,6 +11,3 @@ class DecisionDAL:
 
     def get_total_decline_vehicles_last_week(self):
         self._db_session.query(Decision.id).count()
-
-
-
