@@ -12,7 +12,9 @@ Steps to perform:
 Design: 
 
 1. BP= gets BC, DAL and API
-execute function makes request, check payload, and loading to DB and there's a construct method  
+
+execute function makes request, check payload, and loading to DB and there's a construct method
+
 2. BC= execute function that analyzer the number-plate if valid one
 3. DAL= using postgres, ORM
 4. IaC= docker compose
