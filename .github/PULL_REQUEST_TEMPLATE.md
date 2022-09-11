@@ -52,27 +52,20 @@ Example of valid changelog:
 <!--- Go over all the following points, and put an `x` in all the boxes that apply. -->
 <!--- If you're unsure about any of these, don't hesitate to ask. -->
 
-#### I completed the info required for SlackBot:
-
-- [ ] PR sections required for our T One SlackBot are completely filled out.
-- [x] Requires QE Testing (_If true, SlackBot will publish all required sections to #tone-daily-ui-regression-testing_).
-- [x] Publish public changelog (_If true, SlackBot will publish only the "Public Changelog" section for customer visibility_).
-
-<!--- END REQUIRED SECTIONS FOR SLACKBOT -->
 
 ---
 
 #### I did the necessary testing and verified my changes:
 
 - [ ] I added tests to cover my changes
-- [ ] I deployed and verified my code in `qa-develop`
-- [ ] I checked Splunk for logs and side effects
+- [ ] I deployed and verified my code in `qa`
+- [ ] I checked for logs and side effects
 - [ ] I added automation/contract tests
 
 #### I made the necessary changes to the:
 
 - [ ] documentation
-- [ ] monitoring tools (Splunk, Datadog, monitors, dashboards, SLIs, SLOs, etc.)
+- [ ] monitoring tools (Splunk, Datadog, monitors, dashboards, etc.)
 - [ ] service page of the service or its upstream/downstream dependencies
 
 ### Motivation and Context
