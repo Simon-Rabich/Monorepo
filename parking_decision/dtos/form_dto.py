@@ -1,9 +1,4 @@
-# Python Imports
-import array
 from dataclasses import dataclass
-# Third parties imports
-
-# Local imports
 
 
 @dataclass
