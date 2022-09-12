@@ -6,24 +6,17 @@ services:
     environment:
       POSTGRES_USER: root
       POSTGRES_PASSWORD: root
-      POSTGRES_DB: feedgate
-
-#      POSTGRES_INITDB_ARGS:
-#      POSTGRES_INITDB_WALDIR:
-#      POSTGRES_HOST_AUTH_METHOD:
-#      PGDATA:
+      POSTGRES_DB: parking_decision
     ports:
       - "5432:5432"
+
 #  pgadmin:
-#    container_name: pgadmin4_container
+#    container_name: pgadmin4_container_main
 #    image: dpage/pgadmin4
 #    restart: always
 #    environment:
 #      PGADMIN_DEFAULT_EMAIL: admin@admin.com
 #      PGADMIN_DEFAULT_PASSWORD: root
+#      MAX_LOGIN_TRIES: 999
 #    ports:
 #      - "5050:80"
-#networks:
-#volumes:
-#configs:
-#secrets:
