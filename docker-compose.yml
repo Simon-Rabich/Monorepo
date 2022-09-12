@@ -6,7 +6,7 @@ services:
     environment:
       POSTGRES_USER: root
       POSTGRES_PASSWORD: root
-      POSTGRES_DB: parking_decision
+      POSTGRES_DB: feedgate
     ports:
       - "5432:5432"
 
