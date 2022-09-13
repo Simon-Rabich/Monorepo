@@ -3,7 +3,6 @@ from parking_decision.db.models import Base, DBSession
 
 
 def setup_db_schema():
-    from parking_decision.db.models.decision import Decision
 
     engine = get_engine()
     DBSession.configure(bind=engine)

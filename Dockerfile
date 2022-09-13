@@ -1,2 +1,13 @@
-# comment
-# docker build .
+# syntax=docker/dockerfile:1
+
+FROM python:3.9
+
+WORKDIR /parking-decision-service
+
+COPY requirements.txt requirements.txt
+
+RUN pip3 install -r requirements.txt
+
+COPY . .
+
+CMD ["uvicorn", "parking_decision_service:parking-decision-service", "--host", "0.0.0.0", "--port", "80"]

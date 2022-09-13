@@ -1,6 +1,8 @@
-from sqlalchemy import Column, Integer, Boolean, String, Date
-from parking_decision.db.models import Base
 import datetime
+
+from sqlalchemy import Boolean, Column, Date, Integer, String
+
+from parking_decision.db.models import Base
 
 
 class Decision(Base):
@@ -17,4 +19,3 @@ class Decision(Base):
 
     def __repr__(self):
         return f"decision={self.decision!r} && text={self.text!r} && timestamp={self.timestamp!r}"
-

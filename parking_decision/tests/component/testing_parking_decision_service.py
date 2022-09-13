@@ -3,13 +3,13 @@ import json
 import multiprocessing
 from os import kill
 from signal import SIGKILL
+from unittest import TestCase
 
 import requests
-from unittest import TestCase
 
 from parking_decision.common.configurations.get_config import get_config
 from parking_decision.db.migrations.setup_db_schema import setup_db_schema
-from parking_decision_service import ParkingDecisionService
+from parking_decision_service_api import ParkingDecisionService
 
 
 class TestParkingDecisionService(TestCase):

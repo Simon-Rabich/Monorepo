@@ -1,7 +1,9 @@
 from unittest import TestCase
 from unittest.mock import MagicMock
 
-from parking_decision.business_processes.parking_decider_bp import ParkingDeciderBP
+from parking_decision.business_processes.parking_decider_bp import (
+    ParkingDeciderBP,
+)
 from parking_decision.busniess_components.check_plate_bc import CheckPlateBC
 from parking_decision.dals.decision_dal import DecisionDAL
 from parking_decision.helpers.ocr_space_api import OCRSpaceAPi
