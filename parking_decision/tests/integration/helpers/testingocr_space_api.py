@@ -1,6 +1,6 @@
 import json
-from typing import Optional
 from unittest import TestCase
+
 from parking_decision.helpers.ocr_space_api import OCRSpaceAPi
 
 

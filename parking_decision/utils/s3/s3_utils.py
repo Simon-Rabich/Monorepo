@@ -1,10 +1,10 @@
 from typing import Iterator, List
 
-# Internal packages
-from apalib.configurations.get_config import get_config
-
 # External packages
 import boto3
+
+# Internal packages
+from apalib.configurations.get_config import get_config
 from botocore.exceptions import ClientError
 
 

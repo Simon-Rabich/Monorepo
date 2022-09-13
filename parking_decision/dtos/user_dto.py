@@ -1,5 +1,6 @@
 # Python Imports
 from dataclasses import dataclass
+
 # Third parties imports
 
 # Local imports

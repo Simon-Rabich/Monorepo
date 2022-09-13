@@ -1,9 +1,9 @@
 from typing import Optional
 
+from sqlalchemy import create_engine
 from sqlalchemy.future import Engine
 
 from parking_decision.common.configurations.get_config import get_config
-from sqlalchemy import create_engine
 
 engine: Optional[Engine] = None
 

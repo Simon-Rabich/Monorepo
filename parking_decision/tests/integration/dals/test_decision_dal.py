@@ -4,7 +4,9 @@ from unittest import TestCase
 from parking_decision.dals.decision_dal import DecisionDAL
 from parking_decision.db.migrations.setup_db_schema import setup_db_schema
 from parking_decision.db.models.decision import Decision
-from parking_decision.db.parking_decision_db_session import ParkingDecisionDBSession
+from parking_decision.db.parking_decision_db_session import (
+    ParkingDecisionDBSession,
+)
 
 
 class TestDecisionDAL(TestCase):

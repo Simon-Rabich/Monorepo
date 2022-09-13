@@ -1,6 +1,4 @@
-from sqlalchemy import Column
-from sqlalchemy import Integer
-from sqlalchemy import String
+from sqlalchemy import Column, Integer, String
 
 from parking_decision.db.models import Base
 

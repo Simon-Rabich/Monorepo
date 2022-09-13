@@ -1,6 +1,8 @@
-from typing import Dict, Optional
 from contextvars import ContextVar
+from typing import Dict, Optional
+
 from sqlalchemy.orm import Session, sessionmaker
+
 from parking_decision.db.get_engine import get_engine
 
 _Session: Optional[sessionmaker] = None
