@@ -2,13 +2,14 @@
 
 # Third parties imports
 import sqlalchemy as db
-#d
+
 # Local imports
 
 table = 'Table:'
 column = '-> Column::'
 
 metadata = db.MetaData()
+
 
 def get_db_metadate() -> db.MetaData:
     return metadata
