@@ -1,4 +1,6 @@
 from multiprocessing import Process
+# from multiprocessing.process import AuthenticationString
+from pickle import dump
 from time import sleep
 from typing import Union
 
@@ -37,23 +39,62 @@ class ParkingDecisionService:
                 ParkingDeciderBP.construct(db_session=pddb_session).execute(file_name=file_name, file=file)
         return result
 
+    # global process variable
+    proc = None
+
     @classmethod
-    def start(cls) -> Process:
+    def run(cls):
+        """
+        This function to run configured uvicorn server.
+        """
         app = FastAPI()
         app.include_router(router)
         web_host = get_config()["WEB_HOST"]
         web_port = get_config()["WEB_PORT"]
+        uvicorn.run(app=app, host=web_host,
+                    port=web_port, log_level="info")
 
-        process = loads(dumps(Process(target=lambda: uvicorn.run(app, host=web_host,
-                                                                 port=web_port, log_level="info"))))
-        process.start()
-        sleep(1)
-        return process
+    @classmethod
+    def start(cls) -> Process:
+        """
+        This function to start a new process (start the server).
+        """
+        global proc
+        # create process instance and set the target to run function.
+        # use daemon mode to stop the process whenever the program stopped.
+        proc = Process(target=ParkingDecisionService.run(), args=(), daemon=True)
+        proc.start()
 
-        # uvicorn.run(app, host=get_config()["WEB_HOST"],
-        #             port=get_config()["WEB_PORT"], log_level="info")
+    @classmethod
+    def stop(cls):
+        """
+        This function to join (stop) the process (stop the server).
+        """
+        global proc
+        # check if the process is not None
+        if proc:
+            # join (stop) the process with a timeout setten to 0.25 seconds.
+            # using timeout (the optional arg) is too important in order to
+            # enforce the server to stop.
+            proc.join(0.25)
 
+    # @classmethod
+    # def start(cls) -> Process:
+    #     app = FastAPI()
+    #     app.include_router(router)
+    #     web_host = get_config()["WEB_HOST"]
+    #     web_port = get_config()["WEB_PORT"]
+
+        # process = Process(target=lambda: uvicorn.run(app, host=web_host,
+        #                                              port=web_port, log_level="info"))
+
+        # serialize_process = loads(dumps(process))
+        # process.start()
+        # sleep(1)
+        # return process
 
 
 if __name__ == '__main__':
     ParkingDecisionService.start()
+    sleep(1)
+    # ParkingDecisionService.stop()

@@ -2,7 +2,7 @@
 
 FROM python:3.9
 
-WORKDIR /parking-decision-service
+WORKDIR /parking_decision_service
 
 COPY requirements.txt requirements.txt
 
