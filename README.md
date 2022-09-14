@@ -25,9 +25,9 @@ This repository uses number of open source projects to work properly:
 
 ## Installation
 
-Landing page requires [Node.js](https://nodejs.org/) v12+ to run.
+Parking decider requires [Python]("url") to run.
 
-Install the dependencies and devDependencies and start the server.
+Install the dependencies and start the server.
 
 ```sh
 pip install -r requirements.txt
@@ -37,12 +37,12 @@ For production environments...
 
 ```sh
 docker compose up -d
-Run: setup_db_schema() inside db/migrations
+run: setup_db_schema() inside db/migrations
 ```
 
-## APIs
+## API
 
-Landing page uses the following APIs.
+Parking decision uses the following APIs.
 Instructions on how to use them in your own application are linked below.
 
 | API              | Documentation |
