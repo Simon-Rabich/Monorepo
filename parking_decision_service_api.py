@@ -24,13 +24,18 @@ router = InferringRouter()
 @cbv(router)
 class ParkingDecisionService:
 
-    # @router.get("/")
-    # def read_root(self):
-    #     return {"Hello": "World"}
-    #
-    # @router.get("/items/{item_id}")
-    # def read_item(self, item_id: int, q: Union[str, None] = None):
-    #     return {"item_id": item_id, "q": q}
+    @router.get("/")
+    def read_root(self):
+        return {"Hello": "World"}
+
+    @router.get("/items/{item_id}")
+    def read_item(self, item_id: int, q: Union[str, None] = None):
+        return {"item_id": item_id, "q": q}
+
+    @router.get("/health")
+    def health_check(self):
+        """Endpoint for health checks"""
+        return {"statusCode": 200, "message": "Service is healthy"}
 
     @router.post("/get_parking_decision")
     def get_parking_decision(self, file_name: str, file: Union[bytes, None] = File(default=None)):
@@ -84,10 +89,8 @@ class ParkingDecisionService:
     #     app.include_router(router)
     #     web_host = get_config()["WEB_HOST"]
     #     web_port = get_config()["WEB_PORT"]
-
         # process = Process(target=lambda: uvicorn.run(app, host=web_host,
         #                                              port=web_port, log_level="info"))
-
         # serialize_process = loads(dumps(process))
         # process.start()
         # sleep(1)
@@ -97,4 +100,4 @@ class ParkingDecisionService:
 if __name__ == '__main__':
     ParkingDecisionService.start()
     sleep(1)
-    # ParkingDecisionService.stop()
+    ParkingDecisionService.stop()

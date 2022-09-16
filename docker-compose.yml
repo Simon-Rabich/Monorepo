@@ -1,6 +1,6 @@
 services:
   db:
-    container_name: pg_container_main
+    container_name: pg_container
     image: postgres
     restart: always
     environment:
