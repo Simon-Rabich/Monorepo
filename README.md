@@ -55,13 +55,13 @@ Once the virtualenv is activated, you can install the required dependencies.
 $ pip install -r requirements.txt
 ```
 
-Start the server
+Start the DB
 
 ```sh
 $ docker compose up -d
 ```
 
-Start the database, run
+Set Up db schema , run
 
 ```sh
 setup_db_schema() function inside db/migrations/setup_db_schema.py
@@ -101,30 +101,24 @@ $ python -m pytest
 $ pip3 freeze >> requirement.txt
 ```
 
-## Docker 
-1. build-an-image 
-2. verify-image 
-3. tag-image  
-4. remove-tag 
-5. start-container
-
+## Docker
 ```sh
-#1 
+#build-an-image 
 $ docker build --tag my-python-docker-image-app
 ```
 ```sh
-#2
+#verify-image
 $ docker images
 ```
 ```sh
-#3
+#tag-image 
 $ docker tag my-python-docker-image-app:latest python-docker:v1.0.0
 ```
 ```sh
-#4
+#remove-tag
 $ docker rmi python-docker:v1.0.0
 ```
 ```sh
-#5
+#start-container
 $ docker run -d --name mycontainer -p 80:80 my-python-docker-image-app
 ```

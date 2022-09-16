@@ -24,7 +24,7 @@ router = InferringRouter()
 @cbv(router)
 class ParkingDecisionService:
 
-    @router.get("/")
+    @router.get("/read_root")
     def read_root(self):
         return {"Hello": "World"}
 
@@ -32,7 +32,7 @@ class ParkingDecisionService:
     def read_item(self, item_id: int, q: Union[str, None] = None):
         return {"item_id": item_id, "q": q}
 
-    @router.get("/health")
+    @router.get("/health_check")
     def health_check(self):
         """Endpoint for health checks"""
         return {"statusCode": 200, "message": "Service is healthy"}
@@ -59,6 +59,12 @@ class ParkingDecisionService:
         uvicorn.run(app=app, host=web_host,
                     port=web_port, log_level="info")
 
+        # process = Process(target=lambda: uvicorn.run(app, host=web_host, port=web_port, log_level="info"))
+        # serialize_process = loads(dumps(process))
+        # process.start()
+        # sleep(1)
+        # return process
+
     @classmethod
     def start(cls) -> Process:
         """
@@ -82,19 +88,6 @@ class ParkingDecisionService:
             # using timeout (the optional arg) is too important in order to
             # enforce the server to stop.
             proc.join(0.25)
-
-    # @classmethod
-    # def start(cls) -> Process:
-    #     app = FastAPI()
-    #     app.include_router(router)
-    #     web_host = get_config()["WEB_HOST"]
-    #     web_port = get_config()["WEB_PORT"]
-        # process = Process(target=lambda: uvicorn.run(app, host=web_host,
-        #                                              port=web_port, log_level="info"))
-        # serialize_process = loads(dumps(process))
-        # process.start()
-        # sleep(1)
-        # return process
 
 
 if __name__ == '__main__':
