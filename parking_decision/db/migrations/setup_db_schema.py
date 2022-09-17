@@ -1,4 +1,4 @@
-from parking_decision.db.get_engine import get_engine
+from parking_decision.db.get_db_engine import get_engine
 from parking_decision.db.models import Base, DBSession
 
 
