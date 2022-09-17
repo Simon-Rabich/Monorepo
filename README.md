@@ -1,18 +1,18 @@
 # Parking Decision MicroService
-### _Parking Decision Backend Service giving inspiration and sort of template to study from_
+### _Parking Decision Backend Service giving inspiration and sort of 'study-template'
 ### _Level: easy-medium_
-### _This repo will take you fast-forward to be beyond exceptional_
+### _This repo will take you fast-forward on the road!_
 
 This repository contains backend code, using the FastAPI framework.
 
-![](../../../Downloads/ezgif-6-5d1caffc1857.webp)
+![](parking_decision/helpers/image6.webp)
 
 - CI with GitHub action
 - CD with AWS (not yet)
-- FastAPI + pg db + docker
+- FastAPI + Pg db + Docker
 - Best practices implementations
-- USING:
-- Construct, DAL, ORM, TDD full coverage, docker, swagger
+- Using:
+- construct func, DAL, ORM, TDD full coverage, docker, swagger
 - Workflows, git hooks, SDK, common, PEP8 helpers, PR templates
 - TODO:
 - make serverless, add env configs for dev, stg, uat, prd
@@ -29,7 +29,7 @@ This repository uses number of open source projects to work properly:
 - [Flake8] - Linting the code and prevents bad code (checks if your code complies with the PEP8 style)
 - [Black] - Formatting the code and prevents bad code
 - [Git] - Version manager for the repository
-- [pyproject.toml] - Styling your code (A new configuration file defined in PEP 518, expanded in PEP 621 and PEP 660)
+- [pyproject.toml] - codeStyling (A new config file defined in PEP 518, expanded in PEP 621 and PEP 660)
 - [unittest] - Unit-tests for code
 - [PIP] - Package manager
 - [isort] Importing sorting to organize all the imports in our codes
@@ -38,7 +38,7 @@ This repository uses number of open source projects to work properly:
 - [mypy] Checks for Static typing
 - [Dependabot] Keeping the dependencies updated automatically, Keeps on Productivity
 - [requirements.txt] Using Dependabot to make sure we always have the latest version
--
+
 ## Installation
 
 Parking decider requires [Python](https://www.python.org/downloads/) to run.
@@ -85,14 +85,7 @@ This API is know how to get an image and extract the text from it.
 |------------------| ------ |
 | OCRapi           | https://ocr.space/ocrapi |
 
-![](../../../Downloads/image3.jpg.webp)
-
-
-## Help
-
-```sh
-$ docker ps, kill, down
-```
+![](parking_decision/helpers/image3.jpg.webp)
 
 ## Format
 
@@ -132,4 +125,10 @@ $ docker rmi python-docker:v1.0.0
 ```sh
 #start-container
 $ docker run -d --name mycontainer -p 80:80 my-python-docker-image-app
+```
+
+## Help
+
+```sh
+$ docker ps, kill, down
 ```

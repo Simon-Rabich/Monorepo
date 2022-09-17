@@ -31,10 +31,10 @@ repos:
         files: \.(py)$
         args:
           - '--settings-path=pyproject.toml'
-  - repo: 'https://github.com/jorisroovers/gitlint'
-    rev:  ""
-    hooks:
-      - id: gitlint
-        args:
-          - '--contrib=CT1'
-          - '--msg-filename'
+#  - repo: 'https://github.com/jorisroovers/gitlint'
+#    rev:  ""
+#    hooks:
+#      - id: gitlint
+#        args:
+#          - '--contrib=CT1'
+#          - '--msg-filename'
