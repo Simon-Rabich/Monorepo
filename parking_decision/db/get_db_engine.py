@@ -8,7 +8,7 @@ from parking_decision.common.configurations.get_config import get_config
 engine: Optional[Engine] = None
 
 
-def get_engine():
+def get_db_engine():
     global engine
     if engine is None:
         url = get_config()['DB_URL']
