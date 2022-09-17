@@ -25,4 +25,3 @@ if __name__ == '__main__':
     print(ParkingDecisionServiceClient().health_check())
     print(ParkingDecisionServiceClient().read_root())
     print(ParkingDecisionServiceClient().read_item())
-
