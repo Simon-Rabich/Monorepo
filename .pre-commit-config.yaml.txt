@@ -24,12 +24,12 @@ repos:
       - id: pycln
         args:
           - '--config=pyproject.toml'
-  - repo: 'https://github.com/pycqa/isort'
-    rev: 5.5.4
-    hooks:
-      - id: isort
-        files: \.(py)$
-        args:
+#  - repo: 'https://github.com/pycqa/isort'
+#    rev: 5.5.4
+#    hooks:
+#      - id: isort
+#        files: \.(py)$
+#        args:
           - '--settings-path=pyproject.toml'
 #  - repo: 'https://github.com/jorisroovers/gitlint'
 #    rev:  ""

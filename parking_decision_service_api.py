@@ -38,7 +38,7 @@ class ParkingDecisionService:
 
     @router.post("/get_parking_decision")
     def get_parking_decision(self, file_name: str, file: Union[bytes, None] = File(default=None)):
-        with ParkingDecisionDBSession() as pddb_session:
+        with ParkingDecisionDBSession as pddb_session:
             result: bool = \
                 ParkingDeciderBP.construct(db_session=pddb_session).execute(file_name=file_name, file=file)
         return result
