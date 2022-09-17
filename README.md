@@ -5,6 +5,8 @@
 
 This repository contains backend code, using the FastAPI framework.
 
+![](../../../Downloads/ezgif-6-5d1caffc1857.webp)
+
 - CI with GitHub action
 - CD with AWS (not yet)
 - FastAPI + pg db + docker
@@ -82,6 +84,8 @@ This API is know how to get an image and extract the text from it.
 | API              | Documentation |
 |------------------| ------ |
 | OCRapi           | https://ocr.space/ocrapi |
+
+![](../../../Downloads/image3.jpg.webp)
 
 
 ## Help
