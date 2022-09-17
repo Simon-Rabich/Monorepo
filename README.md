@@ -1,5 +1,5 @@
 # Parking Decision MicroService
-### _Parking Decision Backend Service giving inspiration and sort of 'study-template'
+### _Parking Decision Backend Service giving inspiration and sort of 'study-template'_
 ### _Level: easy-medium_
 ### _This repo will take you fast-forward on the road!_
 
@@ -131,4 +131,7 @@ $ docker run -d --name mycontainer -p 80:80 my-python-docker-image-app
 
 ```sh
 $ docker ps, kill, down
+```
+```sh
+$ pre-commit uninstall
 ```

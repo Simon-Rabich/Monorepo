@@ -1,10 +1,12 @@
-from parking_decision.db.get_db_engine import get_engine
+# from fastapi_utils.session import get_engine
+
+from parking_decision.db.get_db_engine import get_db_engine
 from parking_decision.db.models import Base, DBSession
 
 
 def setup_db_schema():
 
-    engine = get_engine()
+    engine = get_db_engine()
     DBSession.configure(bind=engine)
     Base.metadata.bind = engine
     Base.metadata.drop_all(engine)

@@ -3,8 +3,6 @@ from parking_decision.busniess_components.check_plate_bc import CheckPlateBC
 from parking_decision.dals.decision_dal import DecisionDAL
 from parking_decision.helpers.ocr_space_api import OCRSpaceAPi
 
-# trying new workflow
-
 
 class ParkingDeciderBP:
 
