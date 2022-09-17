@@ -1,11 +1,9 @@
 # 1. Standard library imports.
 from contextvars import ContextVar
-from typing import Dict
-from typing import Optional
+from typing import Dict, Optional
 
 # 2. Related third party imports.
-from sqlalchemy.orm.session import Session
-from sqlalchemy.orm.session import sessionmaker
+from sqlalchemy.orm.session import Session, sessionmaker
 
 # 3. Local application/library specific imports.
 from parking_decision.db.get_db_engine import get_db_engine

@@ -25,4 +25,4 @@
 * Operating System and Python version:
 * The output of `pip freeze`:
 * Link to your project (optional):
-* Your `settings.json`: 
+* Your `settings.json`:

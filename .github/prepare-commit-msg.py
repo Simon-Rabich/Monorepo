@@ -13,7 +13,6 @@ import re
 import sys
 from subprocess import check_output
 
-
 commit_msg_filepath = sys.argv[1]
 branch = (
     check_output(["git", "symbolic-ref", "--short", "HEAD"]).decode("utf-8").strip()

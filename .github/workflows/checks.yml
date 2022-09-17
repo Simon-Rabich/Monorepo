@@ -1,0 +1,153 @@
+name: Tests and Checks
+
+on: [push, pull_request]
+
+jobs:
+  checks:
+    runs-on: "ubuntu-latest"
+    strategy:
+      matrix:
+        python-version: ["3.6", "3.7", "3.8", "3.9", "3.10", pypy-3.9]
+        os: ["macos-latest", "ubuntu-latest"]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.pull_request.head.sha }} # Checkout pull request HEAD commit instead of merge commit
+
+      # Because gitlint is a tool that uses git itself under the hood, we remove git tracking from the checked out
+      # code by temporarily renaming the .git directory.
+      # This is to ensure that the tests don't have a dependency on the version control of gitlint itself.
+      - name: Temporarily remove git version control from code
+        run: mv .git ._git
+
+      - name: Setup python
+        uses: actions/setup-python@v4.2.0
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install requirements
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install -r test-requirements.txt
+
+      - name: Unit Tests
+        run: ./run_tests.sh
+
+      # Coveralls integration doesn't properly work at this point, also see below
+      # - name: Coveralls
+      #   env:
+      #     COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
+      #   run: coveralls
+
+      # Patch the commit-msg hook to make it work in GH CI
+      # Specifically, within the commit-msg hook, wrap the invocation of gitlint with `script`
+
+      - name: Patch commit-msg hook
+        run: |
+          # Escape " to \"
+          sed -i -E '/^gitlint/ s/"/\\"/g' gitlint-core/gitlint/files/commit-msg
+          # Replace `gitlint <args>` with `script -e -q -c "gitlint <args>"`
+          sed -i -E 's/^gitlint(.*)/script -e -q -c  "\0"/' gitlint-core/gitlint/files/commit-msg
+
+      - name: Integration Tests
+        run: ./run_tests.sh -i
+
+      - name: Integration Tests (GITLINT_USE_SH_LIB=0)
+        env:
+          GITLINT_USE_SH_LIB: 0
+        run: ./run_tests.sh -i
+
+      - name: Code formatting (black)
+        run: ./run_tests.sh -f
+
+      - name: PyLint
+        run: ./run_tests.sh -l
+
+      - name: Build tests
+        run: ./run_tests.sh --build
+
+      # Coveralls GH Action currently doesn't support current non-LCOV reporting format
+      # For now,  still using Travis for unit test coverage reporting
+      # https://github.com/coverallsapp/github-action/issues/30
+      # - name: Coveralls
+      #   uses: coverallsapp/github-action@master
+      #   with:
+      #     github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      # Re-add git version control so we can run gitlint on itself.
+      - name: Re-add git version control to code
+        run: mv ._git .git
+
+      # Run gitlint. Skip during PR runs, since PR commit messages are transient and usually full of gitlint violations.
+      # PRs get squashed and get a proper commit message during merge.
+      - name: Gitlint check
+        run: ./run_tests.sh -g --debug
+        if: ${{ github.event_name	!= 'pull_request' }}
+
+  windows-checks:
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        python-version: [3.6]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.pull_request.head.sha }} # Checkout pull request HEAD commit instead of merge commit
+
+      # Because gitlint is a tool that uses git itself under the hood, we remove git tracking from the checked out
+      # code by temporarily renaming the .git directory.
+      # This is to ensure that the tests don't have a dependency on the version control of gitlint itself.
+      - name: Temporarily remove git version control from code
+        run: Rename-Item .git ._git
+
+      - name: Setup python
+        uses: actions/setup-python@v4.2.0
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: "Upgrade pip on Python 3"
+        if: matrix.python-version == '3.6'
+        run: python -m pip install --upgrade pip
+
+      - name: Install requirements
+        run: |
+          pip install -r requirements.txt
+          pip install -r test-requirements.txt
+
+      - name: gitlint --version
+        run: gitlint --version
+
+      - name: Tests (sanity)
+        run: tools\windows\run_tests.bat "gitlint-core\gitlint\tests\cli\test_cli.py::CLITests::test_lint"
+
+      - name: Tests (ignore cli\*)
+        run: pytest --ignore gitlint-core\gitlint\tests\cli -rw -s gitlint-core
+
+      - name: Tests (test_cli.py only - continue-on-error:true)
+        run: tools\windows\run_tests.bat "gitlint-core\gitlint\tests\cli\test_cli.py"
+        continue-on-error: true # Known to fail at this point
+
+      - name: Tests (all - continue-on-error:true)
+        run: tools\windows\run_tests.bat
+        continue-on-error: true # Known to fail at this point
+
+      - name: Integration tests (continue-on-error:true)
+        run: pytest -rw -s qa
+        continue-on-error: true # Known to fail at this point
+
+      - name: Code formatting (black)
+        run: black .
+
+      - name: PyLint
+        run: pylint gitlint-core\gitlint qa --rcfile=".pylintrc" -r n
+
+      # Re-add git version control so we can run gitlint on itself.
+      - name: Re-add git version control to code
+        run: Rename-Item ._git .git
+
+      # Run gitlint. Skip during PR runs, since PR commit messages are transient and usually full of gitlint violations.
+      # PRs get squashed and get a proper commit message during merge.
+      - name: Gitlint check
+        run: gitlint --debug
+        if: ${{ github.event_name	!= 'pull_request' }}

@@ -1,12 +1,19 @@
-# Parking Decision 
-### _ParkingDecision Service_
+# Parking Decision MicroService
+### _Parking Decision Backend Service giving inspiration and sort of template to study from_
+### _Level: easy-medium_
+### _This repo will take you fast-forward to be beyond exceptional_
 
-This repository contains backend code, using FastAPI framework.
+This repository contains backend code, using the FastAPI framework.
 
-- CI with github action
+- CI with GitHub action
 - CD with AWS (not yet)
-- FastAPI + postgers + docker
-- Best practices
+- FastAPI + pg db + docker
+- Best practices implementations
+- USING:
+- Construct, DAL, ORM, TDD full coverage, docker, swagger
+- Workflows, git hooks, SDK, common, PEP8 helpers, PR templates
+- TODO:
+- make serverless, add env configs for dev, stg, uat, prd
 
 ## Tech
 
@@ -21,56 +28,56 @@ This repository uses number of open source projects to work properly:
 - [Black] - Formatting the code and prevents bad code
 - [Git] - Version manager for the repository
 - [pyproject.toml] - Styling your code (A new configuration file defined in PEP 518, expanded in PEP 621 and PEP 660)
-- [Pytest] - Unit-tests for code
+- [unittest] - Unit-tests for code
 - [PIP] - Package manager
 - [isort] Importing sorting to organize all the imports in our codes
 - [PEP8] Line length is 79, which is the PEP8 standard used by Flake8
 - [Pylint] Checks for bugs, helps enforce a coding standard
-- [mypy] Checks for Static typing 
+- [mypy] Checks for Static typing
 - [Dependabot] Keeping the dependencies updated automatically, Keeps on Productivity
 - [requirements.txt] Using Dependabot to make sure we always have the latest version
-- 
+-
 ## Installation
 
-Parking decider requires [Python]("https://www.python.org/downloads/") to run.
+Parking decider requires [Python](https://www.python.org/downloads/) to run.
 
 ## Setup
 
 To manually create a virtualenv on MacOS and Linux:
 
 ```sh
-$ python3 -m venv venv
+python3 -m venv venv
 ```
 
 After the init process completes and the virtualenv is created, you can use the following
 step to activate your virtualenv.
 
 ```sh
-$ source venv/bin/activate
+source venv/bin/activate
 ```
 
 Once the virtualenv is activated, you can install the required dependencies.
 
 ```sh
-$ pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
-Start the DB
+## StartDB
 
 ```sh
-$ docker compose up -d
+docker compose up -d
 ```
 
-Set Up db schema , run
+## Setdb-schema
 
 ```sh
 setup_db_schema() function inside db/migrations/setup_db_schema.py
 ```
 
-## API
+## 3rd Party API
 
 Parking decision uses the following APIs.
-Instructions on how to use them in your own application are linked below.
+This API is know how to get an image and extract the text from it.
 
 | API              | Documentation |
 |------------------| ------ |
@@ -86,24 +93,24 @@ $ docker ps, kill, down
 ## Format
 
 ```sh
-$ pre-commit run --all-files
+pre-commit run --all-files
 ```
 
 ## Tests
 
 ```sh
-$ python -m pytest
+python -m pytest
 ```
 
 ## Maintain
 
 ```sh
-$ pip3 freeze >> requirement.txt
+pip3 freeze >> requirement.txt
 ```
 
 ## Docker
 ```sh
-#build-an-image 
+#build-an-image
 $ docker build --tag my-python-docker-image-app
 ```
 ```sh
@@ -111,7 +118,7 @@ $ docker build --tag my-python-docker-image-app
 $ docker images
 ```
 ```sh
-#tag-image 
+#tag-image
 $ docker tag my-python-docker-image-app:latest python-docker:v1.0.0
 ```
 ```sh
