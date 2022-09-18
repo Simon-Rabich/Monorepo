@@ -65,7 +65,7 @@ class BasicDBSession(metaclass=DBSessionMeta):
     def __enter__(self) -> Session:
         global _Session
         if not isinstance(_Session, sessionmaker):
-            _Session = sessionmaker(bind=get_db_engine(service=self.__service))
+            _Session = sessionmaker(bind=get_db_engine())
         self.token = _session.set(_Session(**self.session_args))
         return type(self).session
 

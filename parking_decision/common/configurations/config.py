@@ -4,7 +4,3 @@ BASIC_CONFIG = {
     "WEB_HOST": "0.0.0.0",
     "WEB_PORT": 8001
 }
-
-# "DB_URL": 'postgresql' + '+psycopg2' + '://' + 'admin:admin@localhost:5432/parking_decision',
-# pg8000
-# "DB_URL": "postgresql://admin:admin@localhost:5432/parking-decision",

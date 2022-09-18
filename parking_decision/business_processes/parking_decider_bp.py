@@ -20,9 +20,9 @@ class ParkingDeciderBP:
         return decision
 
     @classmethod
-    def construct(cls, db_session) -> 'ParkingDeciderBP':
+    def construct(cls) -> 'ParkingDeciderBP':
         ocr_space_api = OCRSpaceAPi()
-        decision_dal = DecisionDAL(db_session=db_session)
+        decision_dal = DecisionDAL()
         check_plate_bc = CheckPlateBC()
         return cls(ocr_space_api=ocr_space_api,
                    decision_dal=decision_dal,
