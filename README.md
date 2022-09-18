@@ -1,4 +1,5 @@
 # Parking Decision MicroService
+# Full Stack FastAPI PostgreSQL
 ### _Parking Decision Backend Service giving inspiration and sort of 'study-template'_
 ### _Level: easy-medium_
 ### _This repo will take you fast-forward on the road!_
@@ -105,6 +106,12 @@ python -m pytest
 pip3 freeze >> requirement.txt
 ```
 
+## See Logs of postgreSQL in a detached mode 
+
+```sh
+docker logs -f local_pgdb
+```
+
 ## Docker
 ```sh
 #build-an-image
@@ -130,8 +137,28 @@ $ docker run -d --name mycontainer -p 80:80 my-python-docker-image-app
 ## Help
 
 ```sh
-$ docker ps, kill, down
+$ docker ps, kill, down, inspect
 ```
 ```sh
 $ pre-commit uninstall
+```
+
+## PgAdmin
+
+To configure pgadmin – open a browser and go to – http://localhost:5050/ . 
+In the connection details for hostname give the container name of postgreSQL
+
+## removeContainer
+```sh
+docker stop pgadmin4_container
+```
+```sh
+docker container rm pgadmin4_container
+```
+## DockerCompose
+```sh
+docker compose down 
+```
+```sh
+docker compose up -d
 ```
