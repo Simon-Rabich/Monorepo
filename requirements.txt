@@ -200,9 +200,9 @@ poetry==1.2.0
 poetry-core==1.1.0
 poetry-core==1.1.0
 poetry-core==1.1.0
-poetry-plugin-export==1.0.6
-poetry-plugin-export==1.0.6
-poetry-plugin-export==1.0.6
+poetry-plugin-export==1.0.7
+poetry-plugin-export==1.0.7
+poetry-plugin-export==1.0.7
 pre-commit==2.20.0
 pre-commit==2.20.0
 pre-commit==2.20.0
@@ -400,7 +400,7 @@ platformdirs==2.5.2
 pluggy==1.0.0
 poetry==1.2.0
 poetry-core==1.1.0
-poetry-plugin-export==1.0.6
+poetry-plugin-export==1.0.7
 pre-commit==2.20.0
 psycopg2-binary==2.9.3
 ptyprocess==0.7.0
@@ -480,7 +480,7 @@ platformdirs==2.5.2
 pluggy==1.0.0
 poetry==1.2.0
 poetry-core==1.1.0
-poetry-plugin-export==1.0.6
+poetry-plugin-export==1.0.7
 pre-commit==2.20.0
 psycopg2-binary==2.9.3
 ptyprocess==0.7.0
