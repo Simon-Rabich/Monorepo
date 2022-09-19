@@ -143,9 +143,9 @@ jaraco.classes==3.2.2
 jsonschema==4.16.0
 jsonschema==4.16.0
 jsonschema==4.16.0
-keyring==23.9.1
-keyring==23.9.1
-keyring==23.9.1
+keyring==23.9.3
+keyring==23.9.3
+keyring==23.9.3
 lockfile==0.12.2
 lockfile==0.12.2
 lockfile==0.12.2
@@ -386,7 +386,7 @@ importlib-resources==5.9.0
 iniconfig==1.1.1
 jaraco.classes==3.2.2
 jsonschema==4.16.0
-keyring==23.9.1
+keyring==23.9.3
 lockfile==0.12.2
 more-itertools==8.14.0
 msgpack==1.0.4
@@ -466,7 +466,7 @@ importlib-resources==5.9.0
 iniconfig==1.1.1
 jaraco.classes==3.2.2
 jsonschema==4.16.0
-keyring==23.9.1
+keyring==23.9.3
 lockfile==0.12.2
 more-itertools==8.14.0
 msgpack==1.0.4
