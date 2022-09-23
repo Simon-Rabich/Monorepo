@@ -2,25 +2,26 @@
 [<img align="right" width="150" src="https://firstcontributions.github.io/assets/Readme/join-slack-team.png">](https://join.slack.com/t/firstcontributors/shared_invite/zt-vchl8cde-S0KstI_jyCcGEEj7rSTQiA)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 ![GitHub Contributors Image](https://contrib.rocks/image?repo=Your_GitHub_Username/Your_GitHub_Repository_Name)
-# Parking Decision MicroService
-### _Backend Service giving inspiration and study-template_
+# Parking Decision Micro-Service
+### _Backend Service for giving inspiration for a template-study_
 ### _Level: easy-medium_
 ### _This repo will take you fast-forward on the road!_
-///
-This repository contains backend code, using the FastAPI framework.
+
+### _This repository contains backend code, using the FastAPI framework._
 
 ![](parking_decision/helpers/image6.webp)
 
-- CI with GitHub action
-- CD with AWS (not yet)
-- FastAPI + Pg db + Docker
+## _Stuff_
+
+- CI with GitHub Actions
+- CD with AWS (todo)
+- FastAPI + Pg DB + Docker
 - Best practices implementations
 - Using:
 - construct func, DAL, ORM, TDD full coverage, docker, swagger
 - Workflows, git hooks, SDK, common, PEP8 helpers, PR templates
-- TODO:
-- make serverless, add env configs for dev, stg, uat, prd
-
+- TODO (serverless, dev, stg, uat, prd)
+- 
 ## Tech
 
 This repository uses number of open source projects to work properly:
@@ -68,13 +69,13 @@ Once the virtualenv is activated, you can install the required dependencies.
 pip install -r requirements.txt
 ```
 
-## StartDB
+## DB
 
 ```sh
 docker compose up -d
 ```
 
-## Setdb-schema
+## Schema
 
 ```sh
 setup_db_schema() function inside db/migrations/setup_db_schema.py
@@ -109,7 +110,7 @@ python -m pytest
 pip3 freeze >> requirement.txt
 ```
 
-## See Logs of postgreSQL in a detached mode 
+## DB Logs
 
 ```sh
 docker logs -f local_pgdb
