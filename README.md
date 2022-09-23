@@ -3,9 +3,9 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 ![GitHub Contributors Image](https://contrib.rocks/image?repo=Your_GitHub_Username/Your_GitHub_Repository_Name)
 # Parking Decision Micro-Service
-### _Backend Service for giving inspiration for a template-study_
+### _Backend Service for giving inspiration for your own._
 ### _Level: easy-medium_
-### _This repo will take you fast-forward on the road!_
+### _This repo will take you fast-forward on the road._
 
 ### _This repository contains backend code, using the FastAPI framework._
 
