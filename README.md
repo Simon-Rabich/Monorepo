@@ -1,7 +1,7 @@
 [![Open Source Love](https://firstcontributions.github.io/open-source-badges/badges/open-source-v1/open-source.svg)](https://github.com/firstcontributions/open-source-badges)
 [<img align="right" width="150" src="https://firstcontributions.github.io/assets/Readme/join-slack-team.png">](https://join.slack.com/t/firstcontributors/shared_invite/zt-vchl8cde-S0KstI_jyCcGEEj7rSTQiA)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
-![GitHub Contributors Image](https://contrib.rocks/image?repo=Your_GitHub_Username/Your_GitHub_Repository_Name)
+
 # Parking Decision Micro-Service
 ### _Backend Service for giving inspiration for your own._
 ### _Level: easy-medium_
@@ -21,8 +21,8 @@
 - construct func, DAL, ORM, TDD full coverage, docker, swagger
 - Workflows, git hooks, SDK, common, PEP8 helpers, PR templates
 - TODO (serverless, dev, stg, uat, prd)
-- 
-## Tech
+
+## _Tech_
 
 This repository uses number of open source projects to work properly:
 
@@ -78,10 +78,10 @@ docker compose up -d
 ## Schema
 
 ```sh
-setup_db_schema() function inside db/migrations/setup_db_schema.py
+run --> setup_db_schema()  inside db/migrations/setup_db_schema.py
 ```
 
-## 3rd Party API
+## 3rd API
 
 Parking decision uses the following APIs.
 This API is know how to get an image and extract the text from it.
@@ -152,14 +152,14 @@ $ pre-commit uninstall
 To configure pgadmin – open a browser and go to – http://localhost:5050/ . 
 In the connection details for hostname give the container name of postgreSQL
 
-## removeContainer
+## remove_Container
 ```sh
 docker stop pgadmin4_container
 ```
 ```sh
 docker container rm pgadmin4_container
 ```
-## DockerCompose
+## Docker_Compose
 ```sh
 docker compose down 
 ```
