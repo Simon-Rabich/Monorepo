@@ -2,14 +2,14 @@
 [<img align="right" width="150" src="https://firstcontributions.github.io/assets/Readme/join-slack-team.png">](https://join.slack.com/t/firstcontributors/shared_invite/zt-vchl8cde-S0KstI_jyCcGEEj7rSTQiA)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
-# Parking Decision Micro-Service
-### _Backend Service for giving inspiration for your own._
+# 🚀 Parking Decision Micro-Service ➡️ 
+### _Backend Service for giving inspiration for your own stuff._
 ### _Level: easy-medium_
 ### _This repo will take you fast-forward on the road._
 
 ### _This repository contains backend code, using the FastAPI framework._
 
-![](parking_decision/helpers/image6.webp)
+![](graphics/image6.webp)
 
 ## _Stuff_
 
@@ -90,7 +90,7 @@ This API is know how to get an image and extract the text from it.
 |------------------| ------ |
 | OCRapi           | https://ocr.space/ocrapi |
 
-![](parking_decision/helpers/image3.jpg.webp)
+![](graphics/image3.jpg.webp)
 
 ## Format
 
@@ -99,7 +99,7 @@ pre-commit run --all-files
 ```
 
 ## Tests
-
+![Header](graphics/component-diagram.jpg)
 ```sh
 python -m pytest
 ```
@@ -166,3 +166,10 @@ docker compose down
 ```sh
 docker compose up -d
 ```
+
+Endpoints that we're access to:
+
+1. https://rest-api.app/auth
+2. https://rest-api.app/auth/forgot-password
+3. https://rest-api.app/auth/reset-password
+6. https://rest-api.app/auth/change-password
