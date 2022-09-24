@@ -1,0 +1,5 @@
+aio-pika==8.1.1
+uvloop==0.16.0
+ujson
+urllib3
+motor
