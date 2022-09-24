@@ -1,0 +1,81 @@
+---
+version: "2.4"
+services:
+
+#  Skedler Reports container
+
+  reports:
+    image: skedler/reports:latest
+    container_name: reports
+    privileged: true
+    cap_add:
+      - SYS_ADMIN
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+      - reportdata:/var/lib/skedler
+      - ./reporting.yml:/opt/skedler/config/reporting.yml
+    command: /opt/skedler/bin/skedler
+    depends_on:
+      elasticsearch: { condition: service_healthy }
+    ports:
+      - 3000:3000
+    healthcheck:
+      test: ["CMD", "curl", "-s", "-f", "http://localhost:3000"]
+    networks: ['stack']
+
+#  Elasticsearch container
+  elasticsearch:
+    container_name: elasticsearch
+    hostname: elasticsearch
+    image: "docker.elastic.co/elasticsearch/elasticsearch:7.1.1"
+    logging:
+      options:
+        max-file: "3"
+        max-size: "50m"
+    environment:
+      - http.host=0.0.0.0
+      - transport.host=127.0.0.1
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms${ES_JVM_HEAP} -Xmx${ES_JVM_HEAP}"
+    mem_limit: 1g
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - ./config/elasticsearch/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+      - esdata:/usr/share/elasticsearch/data
+    ports: ['9200:9200']
+    healthcheck:
+      test: ["CMD", "curl","-s" ,"-f", "http://localhost:9200/_cat/health"]
+    networks: ['stack']
+
+ #Kibana container
+  kibana:
+    container_name: kibana
+    hostname: kibana
+    build:
+      context: kibanaconfig
+      dockerfile: kibanaconfig/Dockerfile
+    image: kibanaconfig
+    logging:
+      options:
+        max-file: "3"
+        max-size: "50m"
+    volumes:
+      - ./kibanaconfig/kibana.yml:/usr/share/kibana/config/kibana.yml
+      - ./kibanaconfig/skedler_reports.yml:/usr/share/kibana/plugins/skedler/config/skedler_reports.yml
+    ports: ['5601:5601']
+    networks: ['stack']
+    depends_on:
+      elasticsearch: { condition: service_healthy }
+    restart: on-failure
+    healthcheck:
+      test: ["CMD", "curl", "-s", "-f", "http://localhost:5601/"]
+      retries: 6
+volumes:
+  esdata:
+    driver: local
+  reportdata:
+    driver: local
+networks: {stack: {}}

@@ -1,0 +1,9 @@
+cluster.name: guidanz-stack-cluster
+node.name: node-1
+network.host: 0.0.0.0
+path.data: /usr/share/elasticsearch/data
+http.port: 9200
+xpack.monitoring.enabled: true
+http.cors.enabled: true
+http.cors.allow-origin: "*"
+http.max_header_size: 16kb

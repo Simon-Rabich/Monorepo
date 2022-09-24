@@ -29,7 +29,7 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="4f997130-fff3-468d-9c86-1960351da3ca">
-      <console name="parking-decision-service-db" type="STANDARD" schema="" session="Main"><![CDATA[select * from decisions]]></console>
+      <console name="parking-decision-service-db" type="STANDARD" schema="" session="Main" />
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
