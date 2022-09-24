@@ -1,0 +1,8 @@
+libcst==0.4.7
+MonkeyType==22.2.0
+mypy-extensions==0.4.3
+PyYAML==6.0
+typing-inspect==0.8.0
+typing_extensions==4.3.0
+
+selenium~=4.4.3

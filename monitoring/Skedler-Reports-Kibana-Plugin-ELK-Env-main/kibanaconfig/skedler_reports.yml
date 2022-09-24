@@ -1,0 +1,7 @@
+#/*********** Skedler Access URL *************************/
+skedler_reports_url: "http://ip_address:3000"
+
+#/*********************** Basic Authentication *********************/
+# If Skedler Reports uses any username and password
+#skedler_username: user
+#skedler_password: password
