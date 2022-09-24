@@ -1,0 +1,20 @@
+version: '3'
+services:
+
+  mongodb:
+    image: mongo
+    ports:
+      - "27017:27017"
+    command: mongod --bind_ip 0.0.0.0
+
+  rabbitmq:
+    container_name: rabbitmq
+    image: rabbitmq:3-management-alpine
+    ports:
+        - "5672:5672"
+        - "15672:15672"
+    networks:
+        - rabbitmq_net
+
+networks:
+  rabbitmq_net:
