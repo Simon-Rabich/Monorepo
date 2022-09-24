@@ -3,7 +3,7 @@ import logging
 from aio_pika.message import IncomingMessage
 from aio_pika.queue import Queue
 from motor.motor_asyncio import AsyncIOMotorClient
-from asynchronous_message_handling.src.utils.abstract_rabbitmq_consumer import RabbitMQConsumer
+from async_message_handling.src.utils.abstract_rabbitmq_consumer import RabbitMQConsumer
 
 logger = logging.getLogger(__name__)
 
