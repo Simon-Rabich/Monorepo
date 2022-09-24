@@ -9,7 +9,7 @@
 
 ### _This repository contains backend code, using the FastAPI framework._
 
-![](graphics/image6.webp)
+![](../parking_decision/helpers/image6.webp)
 
 ## _Stuff_
 
@@ -90,7 +90,7 @@ This API is know how to get an image and extract the text from it.
 |------------------| ------ |
 | OCRapi           | https://ocr.space/ocrapi |
 
-![](graphics/image3.jpg.webp)
+![](../parking_decision/helpers/image3.jpg.webp)
 
 ## Format
 
@@ -99,7 +99,7 @@ pre-commit run --all-files
 ```
 
 ## Tests
-![Header](graphics/component-diagram.jpg)
+![Header](../graphics/component-diagram.jpg)
 ```sh
 python -m pytest
 ```
