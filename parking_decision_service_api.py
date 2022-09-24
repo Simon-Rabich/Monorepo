@@ -9,11 +9,11 @@ from fastapi import FastAPI, File
 from fastapi_utils.cbv import cbv
 from fastapi_utils.inferring_router import InferringRouter
 
-from parking_decision_srv.business_processes.parking_decider_bp import (
+from micro_service.business_processes.parking_decider_bp import (
     ParkingDeciderBP,
 )
-from parking_decision_srv.common.configurations.get_config import get_config
-from parking_decision_srv.db.parking_decision_db_session import (
+from micro_service.common.configurations.get_config import get_config
+from micro_service.db.parking_decision_db_session import (
     ParkingDecisionDBSession,
 )
 
