@@ -6,7 +6,7 @@ import aio_pika
 from aio_pika.channel import Channel
 from aio_pika.queue import Queue
 from motor.motor_asyncio import AsyncIOMotorClient
-from asynchronous_message_handling.src.consumer import Consumer
+from async_message_handling.src.consumer import Consumer
 
 DEFAULT_QUEUE_PARAMETERS = {
     "durable": True,
