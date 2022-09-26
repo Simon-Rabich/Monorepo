@@ -100,12 +100,12 @@ greenlet==1.1.3
 greenlet==1.1.2
 greenlet==1.1.3
 greenlet==1.1.3
-h11==0.13.0
-h11==0.13.0
-h11==0.13.0
-h11==0.13.0
-h11==0.13.0
-h11==0.13.0
+h11==0.14.0
+h11==0.14.0
+h11==0.14.0
+h11==0.14.0
+h11==0.14.0
+h11==0.14.0
 html5lib==1.1
 html5lib==1.1
 html5lib==1.1
@@ -376,7 +376,7 @@ filelock==3.8.0
 gitlint==0.17.0
 gitlint-core==0.17.0
 greenlet==1.1.2
-h11==0.13.0
+h11==0.14.0
 html5lib==1.1
 identify==2.5.5
 idna==3.4
@@ -456,7 +456,7 @@ filelock==3.8.0
 gitlint==0.17.0
 gitlint-core==0.17.0
 greenlet==1.1.2
-h11==0.13.0
+h11==0.14.0
 html5lib==1.1
 identify==2.5.5
 idna==3.4
