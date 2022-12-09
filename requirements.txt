@@ -23,12 +23,12 @@ CacheControl==0.12.11
 cachy==0.3.0
 cachy==0.3.0
 cachy==0.3.0
-certifi==2022.6.15
-certifi==2022.6.15
-certifi==2022.6.15
-certifi==2022.6.15
-certifi==2022.6.15
-certifi==2022.6.15
+certifi==2022.12.7
+certifi==2022.12.7
+certifi==2022.12.7
+certifi==2022.12.7
+certifi==2022.12.7
+certifi==2022.12.7
 cffi==1.15.1
 cffi==1.15.1
 cffi==1.15.1
@@ -359,7 +359,7 @@ asn1crypto==1.5.1
 attrs==22.1.0
 CacheControl==0.12.11
 cachy==0.3.0
-certifi==2022.6.15
+certifi==2022.12.7
 cffi==1.15.1
 cfgv==3.3.1
 charset-normalizer==2.1.1
@@ -439,7 +439,7 @@ asn1crypto==1.5.1
 attrs==22.1.0
 CacheControl==0.12.11
 cachy==0.3.0
-certifi==2022.6.15
+certifi==2022.12.7
 cffi==1.15.1
 cfgv==3.3.1
 charset-normalizer==2.1.1
